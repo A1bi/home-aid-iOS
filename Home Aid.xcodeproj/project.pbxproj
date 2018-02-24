@@ -23,6 +23,7 @@
 		F0808A0C2041B96300B12932 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0808A0A2041B96300B12932 /* Localizable.strings */; };
 		F08F78392041C62000F98577 /* BeaconsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08F78382041C62000F98577 /* BeaconsTableViewController.swift */; };
 		F08F783B2041D7F200F98577 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08F783A2041D7F200F98577 /* Beacon.swift */; };
+		F08F783D2041EC0700F98577 /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08F783C2041EC0700F98577 /* BeaconManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F0808A0D2041BB0000B12932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F08F78382041C62000F98577 /* BeaconsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewController.swift; sourceTree = "<group>"; };
 		F08F783A2041D7F200F98577 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		F08F783C2041EC0700F98577 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				F08F78382041C62000F98577 /* BeaconsTableViewController.swift */,
 				F08089DF20407B1200B12932 /* HomeAidManager.swift */,
 				F08F783A2041D7F200F98577 /* Beacon.swift */,
+				F08F783C2041EC0700F98577 /* BeaconManager.swift */,
 				F08089D12040781000B12932 /* Main.storyboard */,
 				F08089D42040781000B12932 /* Assets.xcassets */,
 				F08089D62040781000B12932 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 				F08F78392041C62000F98577 /* BeaconsTableViewController.swift in Sources */,
 				F08089CE2040781000B12932 /* DashboardViewController.swift in Sources */,
 				F08F783B2041D7F200F98577 /* Beacon.swift in Sources */,
+				F08F783D2041EC0700F98577 /* BeaconManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
