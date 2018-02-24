@@ -14,7 +14,36 @@
 		F08089D52040781000B12932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08089D42040781000B12932 /* Assets.xcassets */; };
 		F08089D82040781000B12932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089D62040781000B12932 /* LaunchScreen.storyboard */; };
 		F08089E020407B1200B12932 /* HomeAidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089DF20407B1200B12932 /* HomeAidManager.swift */; };
+		F08089E820418AD300B12932 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08089E720418AD300B12932 /* NotificationCenter.framework */; };
+		F08089EB20418AD300B12932 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089EA20418AD300B12932 /* TodayViewController.swift */; };
+		F08089EE20418AD300B12932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089EC20418AD300B12932 /* Main.storyboard */; };
+		F08089F220418AD300B12932 /* Home Aid Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F08089E520418AD300B12932 /* Home Aid Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F08089F720418D1D00B12932 /* HomeAidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089DF20407B1200B12932 /* HomeAidManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F08089F020418AD300B12932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F08089C02040781000B12932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F08089E420418AD300B12932;
+			remoteInfo = "Home Aid Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F08089F620418AD300B12932 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F08089F220418AD300B12932 /* Home Aid Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F08089C82040781000B12932 /* Home Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +55,11 @@
 		F08089D72040781000B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F08089D92040781000B12932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08089DF20407B1200B12932 /* HomeAidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAidManager.swift; sourceTree = "<group>"; };
+		F08089E520418AD300B12932 /* Home Aid Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Home Aid Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F08089E720418AD300B12932 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		F08089EA20418AD300B12932 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		F08089ED20418AD300B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F08089EF20418AD300B12932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +70,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F08089E220418AD300B12932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F08089E820418AD300B12932 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -43,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				F08089CA2040781000B12932 /* Home Aid */,
+				F08089E920418AD300B12932 /* Home Aid Widget */,
+				F08089E620418AD300B12932 /* Frameworks */,
 				F08089C92040781000B12932 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				F08089C82040781000B12932 /* Home Aid.app */,
+				F08089E520418AD300B12932 /* Home Aid Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +115,24 @@
 			path = "Home Aid";
 			sourceTree = "<group>";
 		};
+		F08089E620418AD300B12932 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F08089E720418AD300B12932 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F08089E920418AD300B12932 /* Home Aid Widget */ = {
+			isa = PBXGroup;
+			children = (
+				F08089EA20418AD300B12932 /* TodayViewController.swift */,
+				F08089EC20418AD300B12932 /* Main.storyboard */,
+				F08089EF20418AD300B12932 /* Info.plist */,
+			);
+			path = "Home Aid Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +143,34 @@
 				F08089C42040781000B12932 /* Sources */,
 				F08089C52040781000B12932 /* Frameworks */,
 				F08089C62040781000B12932 /* Resources */,
+				F08089F620418AD300B12932 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F08089F120418AD300B12932 /* PBXTargetDependency */,
 			);
 			name = "Home Aid";
 			productName = "Home Aid";
 			productReference = F08089C82040781000B12932 /* Home Aid.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F08089E420418AD300B12932 /* Home Aid Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F08089F320418AD300B12932 /* Build configuration list for PBXNativeTarget "Home Aid Widget" */;
+			buildPhases = (
+				F08089E120418AD300B12932 /* Sources */,
+				F08089E220418AD300B12932 /* Frameworks */,
+				F08089E320418AD300B12932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Home Aid Widget";
+			productName = "Home Aid Widget";
+			productReference = F08089E520418AD300B12932 /* Home Aid Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +182,10 @@
 				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					F08089C72040781000B12932 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					F08089E420418AD300B12932 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
 					};
@@ -119,6 +205,7 @@
 			projectRoot = "";
 			targets = (
 				F08089C72040781000B12932 /* Home Aid */,
+				F08089E420418AD300B12932 /* Home Aid Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +218,14 @@
 				F08089D82040781000B12932 /* LaunchScreen.storyboard in Resources */,
 				F08089D52040781000B12932 /* Assets.xcassets in Resources */,
 				F08089D32040781000B12932 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F08089E320418AD300B12932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F08089EE20418AD300B12932 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +243,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F08089E120418AD300B12932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F08089F720418D1D00B12932 /* HomeAidManager.swift in Sources */,
+				F08089EB20418AD300B12932 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F08089F120418AD300B12932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F08089E420418AD300B12932 /* Home Aid Widget */;
+			targetProxy = F08089F020418AD300B12932 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F08089D12040781000B12932 /* Main.storyboard */ = {
@@ -165,6 +277,14 @@
 				F08089D72040781000B12932 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F08089EC20418AD300B12932 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F08089ED20418AD300B12932 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -280,6 +400,7 @@
 		F08089DD2040781100B12932 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48L6BF6M3;
@@ -297,6 +418,7 @@
 		F08089DE2040781100B12932 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -309,6 +431,41 @@
 				PROVISIONING_PROFILE_SPECIFIER = "iOS Adhoc";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F08089F420418AD300B12932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = V48L6BF6M3;
+				INFOPLIST_FILE = "Home Aid Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.Home-Aid.Home-Aid-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "10865a51-d5a5-4703-84e2-8d0433828c87";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Development";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F08089F520418AD300B12932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = V48L6BF6M3;
+				INFOPLIST_FILE = "Home Aid Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.Home-Aid.Home-Aid-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e685467c-8528-4669-92e6-8e6eb290faa6";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Adhoc";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -329,6 +486,15 @@
 			buildConfigurations = (
 				F08089DD2040781100B12932 /* Debug */,
 				F08089DE2040781100B12932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F08089F320418AD300B12932 /* Build configuration list for PBXNativeTarget "Home Aid Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F08089F420418AD300B12932 /* Debug */,
+				F08089F520418AD300B12932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
