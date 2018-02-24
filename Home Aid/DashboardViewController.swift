@@ -17,7 +17,8 @@ class DashboardViewController: UIViewController {
         startAction(button: sender)
         
         HomeAidManager.shared.openDoor { (success) in
-            self.finishAction(button: sender, success: success, message: "Tür wurde geöffnet!")
+            let localeKey = success ? "dashboard.doorOpened" : "dashboard.doorNotOpened"
+            self.finishAction(button: sender, success: success, message: NSLocalizedString(localeKey, comment: ""))
         }
     }
     

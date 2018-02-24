@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Home Aid
+
+  Created by Albrecht Oster on 24.02.18.
+  
+*/
+
+"dashboard.doorOpened" = "Tür wurde erfolgreich geöffnet.";
+"dashboard.doorNotOpened" = "Tür konnte nicht geöffnet werden.";

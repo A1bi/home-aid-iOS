@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "✓"; ObjectID = "KiW-HD-lVr"; */
+"KiW-HD-lVr.text" = "✓";
+
+/* Class = "UIButton"; normalTitle = "Open Door"; ObjectID = "aRb-k3-XXD"; */
+"aRb-k3-XXD.normalTitle" = "Tür öffnen";
+
+/* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Dashboard";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "kBX-Ag-kwj"; */
+"kBX-Ag-kwj.text" = "Status";

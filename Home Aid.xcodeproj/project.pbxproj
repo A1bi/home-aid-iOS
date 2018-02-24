@@ -19,6 +19,8 @@
 		F08089EE20418AD300B12932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089EC20418AD300B12932 /* Main.storyboard */; };
 		F08089F220418AD300B12932 /* Home Aid Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F08089E520418AD300B12932 /* Home Aid Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F08089F720418D1D00B12932 /* HomeAidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089DF20407B1200B12932 /* HomeAidManager.swift */; };
+		F0808A092041B8F100B12932 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0808A072041B8F100B12932 /* InfoPlist.strings */; };
+		F0808A0C2041B96300B12932 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0808A0A2041B96300B12932 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +55,18 @@
 		F08089D22040781000B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F08089D42040781000B12932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F08089D72040781000B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F08089D92040781000B12932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08089DF20407B1200B12932 /* HomeAidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAidManager.swift; sourceTree = "<group>"; };
 		F08089E520418AD300B12932 /* Home Aid Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Home Aid Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08089E720418AD300B12932 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		F08089EA20418AD300B12932 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		F08089ED20418AD300B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F08089EF20418AD300B12932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F08089FE2041B69900B12932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		F08089FF2041B69900B12932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		F0808A022041B84D00B12932 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0808A082041B8F100B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0808A0B2041B96300B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F0808A0D2041BB0000B12932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +117,9 @@
 				F08089D12040781000B12932 /* Main.storyboard */,
 				F08089D42040781000B12932 /* Assets.xcassets */,
 				F08089D62040781000B12932 /* LaunchScreen.storyboard */,
-				F08089D92040781000B12932 /* Info.plist */,
+				F0808A022041B84D00B12932 /* Info.plist */,
+				F0808A072041B8F100B12932 /* InfoPlist.strings */,
+				F0808A0A2041B96300B12932 /* Localizable.strings */,
 			);
 			path = "Home Aid";
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = F08089BF2040781000B12932;
 			productRefGroup = F08089C92040781000B12932 /* Products */;
@@ -215,9 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0808A0C2041B96300B12932 /* Localizable.strings in Resources */,
 				F08089D82040781000B12932 /* LaunchScreen.storyboard in Resources */,
 				F08089D52040781000B12932 /* Assets.xcassets in Resources */,
 				F08089D32040781000B12932 /* Main.storyboard in Resources */,
+				F0808A092041B8F100B12932 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +279,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F08089D22040781000B12932 /* Base */,
+				F08089FE2041B69900B12932 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -283,8 +296,26 @@
 			isa = PBXVariantGroup;
 			children = (
 				F08089ED20418AD300B12932 /* Base */,
+				F08089FF2041B69900B12932 /* de */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0808A072041B8F100B12932 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0808A082041B8F100B12932 /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F0808A0A2041B96300B12932 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0808A0B2041B96300B12932 /* Base */,
+				F0808A0D2041BB0000B12932 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -294,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -351,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
