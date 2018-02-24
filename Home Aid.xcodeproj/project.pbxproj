@@ -13,6 +13,7 @@
 		F08089D32040781000B12932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089D12040781000B12932 /* Main.storyboard */; };
 		F08089D52040781000B12932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08089D42040781000B12932 /* Assets.xcassets */; };
 		F08089D82040781000B12932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089D62040781000B12932 /* LaunchScreen.storyboard */; };
+		F08089E020407B1200B12932 /* HomeAidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089DF20407B1200B12932 /* HomeAidManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F08089D42040781000B12932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F08089D72040781000B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F08089D92040781000B12932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F08089DF20407B1200B12932 /* HomeAidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAidManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F08089CB2040781000B12932 /* AppDelegate.swift */,
 				F08089CD2040781000B12932 /* DashboardViewController.swift */,
 				F08089CF2040781000B12932 /* SettingsViewController.swift */,
+				F08089DF20407B1200B12932 /* HomeAidManager.swift */,
 				F08089D12040781000B12932 /* Main.storyboard */,
 				F08089D42040781000B12932 /* Assets.xcassets */,
 				F08089D62040781000B12932 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08089D02040781000B12932 /* SettingsViewController.swift in Sources */,
+				F08089E020407B1200B12932 /* HomeAidManager.swift in Sources */,
 				F08089CC2040781000B12932 /* AppDelegate.swift in Sources */,
 				F08089CE2040781000B12932 /* DashboardViewController.swift in Sources */,
 			);
