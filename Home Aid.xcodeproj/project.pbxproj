@@ -21,6 +21,8 @@
 		F08089F720418D1D00B12932 /* HomeAidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089DF20407B1200B12932 /* HomeAidManager.swift */; };
 		F0808A092041B8F100B12932 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0808A072041B8F100B12932 /* InfoPlist.strings */; };
 		F0808A0C2041B96300B12932 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0808A0A2041B96300B12932 /* Localizable.strings */; };
+		F08F78392041C62000F98577 /* BeaconsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08F78382041C62000F98577 /* BeaconsTableViewController.swift */; };
+		F08F783B2041D7F200F98577 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08F783A2041D7F200F98577 /* Beacon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		F0808A082041B8F100B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0808A0B2041B96300B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0808A0D2041BB0000B12932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F08F78382041C62000F98577 /* BeaconsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewController.swift; sourceTree = "<group>"; };
+		F08F783A2041D7F200F98577 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,9 @@
 				F08089CB2040781000B12932 /* AppDelegate.swift */,
 				F08089CD2040781000B12932 /* DashboardViewController.swift */,
 				F08089CF2040781000B12932 /* SettingsViewController.swift */,
+				F08F78382041C62000F98577 /* BeaconsTableViewController.swift */,
 				F08089DF20407B1200B12932 /* HomeAidManager.swift */,
+				F08F783A2041D7F200F98577 /* Beacon.swift */,
 				F08089D12040781000B12932 /* Main.storyboard */,
 				F08089D42040781000B12932 /* Assets.xcassets */,
 				F08089D62040781000B12932 /* LaunchScreen.storyboard */,
@@ -251,7 +257,9 @@
 				F08089D02040781000B12932 /* SettingsViewController.swift in Sources */,
 				F08089E020407B1200B12932 /* HomeAidManager.swift in Sources */,
 				F08089CC2040781000B12932 /* AppDelegate.swift in Sources */,
+				F08F78392041C62000F98577 /* BeaconsTableViewController.swift in Sources */,
 				F08089CE2040781000B12932 /* DashboardViewController.swift in Sources */,
+				F08F783B2041D7F200F98577 /* Beacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

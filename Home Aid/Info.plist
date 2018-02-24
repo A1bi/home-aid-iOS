@@ -49,5 +49,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Home Aid needs Location Services to open the door when approaching.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Home Aid needs Location Services to open the door when approaching.</string>
 </dict>
 </plist>
