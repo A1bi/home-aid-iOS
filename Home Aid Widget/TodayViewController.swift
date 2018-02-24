@@ -29,7 +29,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         HomeAidManager.shared.openDoor { (success) in
             DispatchQueue.main.sync {
-                self.checkMarkLabel.isHidden = false
+                self.checkMarkLabel.isHidden = !success
                 self.spinner.stopAnimating()
             }
 

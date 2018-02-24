@@ -18,23 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uug-wD-QL0">
-                                <rect key="frame" x="151" y="318" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Open door"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-KL-W5m">
+                                <rect key="frame" x="25" y="573" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBX-Ag-kwj">
+                                <rect key="frame" x="70" y="572.5" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRb-k3-XXD">
+                                <rect key="frame" x="107.5" y="313.5" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.35364348600000001" green="0.59900697560000005" blue="0.98026635360000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="GSk-F0-hCi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ian-Db-mKm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Open Door"/>
                                 <connections>
-                                    <action selector="openDoor:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vnl-rY-QjJ"/>
+                                    <action selector="openDoor:" destination="9pv-A4-QxB" eventType="touchUpInside" id="zov-sY-VfH"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-HD-lVr">
+                                <rect key="frame" x="17" y="556.5" width="36.5" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kBX-Ag-kwj" firstAttribute="centerY" secondItem="cxl-KL-W5m" secondAttribute="centerY" id="ONO-BO-3Tw"/>
+                            <constraint firstItem="cxl-KL-W5m" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="25" id="POH-at-HZ6"/>
+                            <constraint firstItem="KiW-HD-lVr" firstAttribute="centerX" secondItem="cxl-KL-W5m" secondAttribute="centerX" id="TuY-Ww-bgk"/>
+                            <constraint firstItem="aRb-k3-XXD" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="Xuv-oP-dSx"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kBX-Ag-kwj" secondAttribute="trailing" constant="25" id="bdm-pI-F8s"/>
+                            <constraint firstItem="KiW-HD-lVr" firstAttribute="centerY" secondItem="cxl-KL-W5m" secondAttribute="centerY" id="boi-pc-R2U"/>
+                            <constraint firstItem="kBX-Ag-kwj" firstAttribute="leading" secondItem="cxl-KL-W5m" secondAttribute="trailing" constant="25" id="hhn-hL-nYh"/>
+                            <constraint firstItem="aRb-k3-XXD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="rz0-3a-IP4"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="cxl-KL-W5m" secondAttribute="bottom" constant="25" id="uSf-dr-Mx4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="checkMarkLabel" destination="KiW-HD-lVr" id="q5W-mS-eRb"/>
+                        <outlet property="spinner" destination="cxl-KL-W5m" id="lfx-LK-1uG"/>
+                        <outlet property="statusLabel" destination="kBX-Ag-kwj" id="QsB-Ue-wgC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.27536231884062" y="-321.19565217391306"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
