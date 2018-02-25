@@ -8,3 +8,8 @@
 
 "dashboard.doorOpened" = "Door successfully opened.";
 "dashboard.doorNotOpened" = "Door could not be opened.";
+
+"beaconManager.doorInRangeNotification.title" = "Door opened";
+"beaconManager.doorInRangeNotification.body" = "The door has been opened.";
+"beaconManager.doorOutOfRangeNotification.title" = "Door out of range";
+"beaconManager.doorOutOfRangeNotification.body" = "The Door is out of range.";

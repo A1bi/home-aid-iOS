@@ -8,3 +8,8 @@
 
 "dashboard.doorOpened" = "Tür wurde erfolgreich geöffnet.";
 "dashboard.doorNotOpened" = "Tür konnte nicht geöffnet werden.";
+
+"beaconManager.doorInRangeNotification.title" = "Tür geöffnet";
+"beaconManager.doorInRangeNotification.body" = "Die Haustür wurde soeben durch Annäherung geöffnet.";
+"beaconManager.doorOutOfRangeNotification.title" = "Tür außerhalb Reichweite";
+"beaconManager.doorOutOfRangeNotification.body" = "Die Haustür befindet sich nicht mehr in Reichweite.";

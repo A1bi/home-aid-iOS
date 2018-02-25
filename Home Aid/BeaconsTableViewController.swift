@@ -18,6 +18,31 @@ class BeaconsTableViewController: UITableViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        BeaconManager.shared.startRanging()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        BeaconManager.shared.stopRanging()
+    }
+    
+    private func nameForProximity(_ proximity: CLProximity) -> String {
+        switch proximity {
+        case .unknown:
+            return "Unknown"
+        case .immediate:
+            return "Immediate"
+        case .near:
+            return "Near"
+        case .far:
+            return "Far"
+        }
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,14 +59,16 @@ class BeaconsTableViewController: UITableViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "beaconCell")
         }
         
-        if let beacon = BeaconManager.shared.beacons[indexPath.row] {
-            cell?.textLabel?.text = beacon.identifier
-            if let distance = beacon.distance {
-                let lengthFormatter = LengthFormatter()
-                lengthFormatter.unitStyle = .medium
-                cell?.detailTextLabel?.text = lengthFormatter.string(fromValue: distance, unit: .meter)
-            }
-        }
+        let beacon = BeaconManager.shared.beacons[indexPath.row]
+        cell?.textLabel?.text = "major: \(beacon.major) | minor: \(beacon.minor)"
+
+        let lengthFormatter = LengthFormatter()
+        lengthFormatter.unitStyle = .medium
+        
+        let distance = lengthFormatter.string(fromValue: beacon.accuracy, unit: .meter)
+        let proximity = self.nameForProximity(beacon.proximity)
+
+        cell?.detailTextLabel?.text = "\(proximity) (\(distance))"
 
         return cell!
     }
