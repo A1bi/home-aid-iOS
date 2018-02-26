@@ -14,10 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        BeaconManager.shared.startMonitoring()
-
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
+
+        BeaconManager.shared.startMonitoringGeoRegion()
+        BeaconManager.shared.approachingDoor {
+            HomeAidManager.shared.openDoor()
+
+            let content = UNMutableNotificationContent()
+            content.title = NSLocalizedString("beaconManager.doorInRangeNotification.title", comment: "")
+            content.body = NSLocalizedString("beaconManager.doorInRangeNotification.body", comment: "")
+            content.sound = .default()
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+            let request = UNNotificationRequest(identifier: "doorInRange", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
 
         return true
     }

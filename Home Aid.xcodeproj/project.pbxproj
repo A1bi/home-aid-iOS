@@ -71,6 +71,7 @@
 		F0808A0D2041BB0000B12932 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F08F78382041C62000F98577 /* BeaconsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewController.swift; sourceTree = "<group>"; };
 		F08F783C2041EC0700F98577 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		F08F783E2043008900F98577 /* DoorLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorLocation.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 				F08089D42040781000B12932 /* Assets.xcassets */,
 				F08089D62040781000B12932 /* LaunchScreen.storyboard */,
 				F0808A022041B84D00B12932 /* Info.plist */,
+				F08F783E2043008900F98577 /* DoorLocation.gpx */,
 				F0808A072041B8F100B12932 /* InfoPlist.strings */,
 				F0808A0A2041B96300B12932 /* Localizable.strings */,
 			);

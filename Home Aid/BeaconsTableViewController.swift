@@ -21,13 +21,13 @@ class BeaconsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        BeaconManager.shared.startRanging()
+        BeaconManager.shared.startRangingForBeacons()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        BeaconManager.shared.stopRanging()
+        BeaconManager.shared.stopRangingForBeacons()
     }
     
     private func nameForProximity(_ proximity: CLProximity) -> String {
