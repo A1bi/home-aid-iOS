@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpsies="http://www.gpsies.com/GPX/1/0" creator="GPSies http://www.gpsies.com - GPSies Track" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.gpsies.com/GPX/1/0 http://www.gpsies.com/gpsies.xsd">
+  <wpt lat="52.56539504" lon="13.32307398">
+    <time>2010-01-01T00:00:00Z</time>
+  </wpt>
+  <wpt lat="52.56526461" lon="13.32356750">
+    <time>2010-01-01T00:00:16Z</time>
+  </wpt>
+  <wpt lat="52.56588740" lon="13.32392150">
+    <time>2010-01-01T00:00:49Z</time>
+  </wpt>
+  <wpt lat="52.56581240" lon="13.32474760">
+    <time>2010-01-01T00:01:14Z</time>
+  </wpt>
+  <wpt lat="52.56583520" lon="13.32560590">
+    <time>2010-01-01T00:01:40Z</time>
+  </wpt>
+  <wpt lat="52.56608950" lon="13.32570250">
+    <time>2010-01-01T00:01:53Z</time>
+  </wpt>
+  <wpt lat="52.56607980" lon="13.32577760">
+    <time>2010-01-01T00:01:56Z</time>
+  </wpt>
+</gpx>
+

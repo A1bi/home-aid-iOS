@@ -72,6 +72,7 @@
 		F08F78382041C62000F98577 /* BeaconsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewController.swift; sourceTree = "<group>"; };
 		F08F783C2041EC0700F98577 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		F08F783E2043008900F98577 /* DoorLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorLocation.gpx; sourceTree = "<group>"; };
+		F08F78422046299500F98577 /* DoorWay.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorWay.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +127,7 @@
 				F08089D62040781000B12932 /* LaunchScreen.storyboard */,
 				F0808A022041B84D00B12932 /* Info.plist */,
 				F08F783E2043008900F98577 /* DoorLocation.gpx */,
+				F08F78422046299500F98577 /* DoorWay.gpx */,
 				F0808A072041B8F100B12932 /* InfoPlist.strings */,
 				F0808A0A2041B96300B12932 /* Localizable.strings */,
 			);
@@ -201,6 +203,11 @@
 					F08089C72040781000B12932 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					F08089E420418AD300B12932 = {
 						CreatedOnToolsVersion = 9.2;

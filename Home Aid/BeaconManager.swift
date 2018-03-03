@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import UserNotifications
 import os.log
 
 typealias BeaconManagerUpdateHandler = () -> ()
@@ -27,14 +28,16 @@ class BeaconManager: NSObject {
     private var updateHandlers = [BeaconManagerUpdateHandler]()
     private var approachingDoorHandler: BeaconManagerApproachingDoorHandler?
     private var backgroundTask: UIBackgroundTaskIdentifier?
+    private var inBackground = false
+    private var wakeUpScreenTimer: Timer?
     private var doorAlreadyRanged = false
     private var rangingEntities = 0
-    
+
     override init() {
         let uuid = UUID(uuidString: BeaconManager.beaconUUID)
         beaconRegion = CLBeaconRegion(proximityUUID: uuid!, identifier: "DoorBeacon")
 
-        geoRegion = CLCircularRegion(center: BeaconManager.doorLocation, radius: BeaconManager.doorLocationRadius, identifier: "Door")
+        geoRegion = CLCircularRegion(center: BeaconManager.doorLocation, radius: BeaconManager.doorLocationRadius, identifier: "DoorRegion")
 
         super.init()
 
@@ -54,15 +57,28 @@ class BeaconManager: NSObject {
     }
 
     private func startRangingForBeaconsInBackground() {
-        doorAlreadyRanged = false
+        if inBackground { return }
 
-        self.backgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
-            self.stopRangingForBeaconsInBackground()
+        doorAlreadyRanged = false
+        inBackground = true
+
+        self.startRangingForBeacons()
+
+        self.backgroundTask = UIApplication.shared.beginBackgroundTask()
+
+        self.wakeUpScreenTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (_) in
+            if UIApplication.shared.backgroundTimeRemaining < 20 {
+                self.showNotification(withMessage: "Background task expired, no door in range.", identifier: "rangingStopped")
+                self.stopRangingForBeaconsInBackground()
+
+            } else {
+                self.showNotification(withMessage: "...", identifier: "screenWakeUp", completionHandler: { (center) in
+                    center.removeDeliveredNotifications(withIdentifiers: ["screenWakeUp"])
+                })
+            }
         })
 
         os_log("Ranging in background started.", log: OSLog.default, type: .info)
-
-        self.startRangingForBeacons()
     }
 
     func stopRangingForBeacons() {
@@ -73,14 +89,33 @@ class BeaconManager: NSObject {
     }
 
     private func stopRangingForBeaconsInBackground() {
+        if !inBackground { return }
+
+        inBackground = false
+
         self.stopRangingForBeacons()
 
-        if let backgroundTask = self.backgroundTask {
-            os_log("Ranging in background stopped.", log: OSLog.default, type: .info)
+        self.wakeUpScreenTimer?.invalidate()
+        self.wakeUpScreenTimer = nil
 
+        if let backgroundTask = self.backgroundTask {
             UIApplication.shared.endBackgroundTask(backgroundTask)
             self.backgroundTask = nil
         }
+
+        os_log("Ranging in background stopped.", log: OSLog.default, type: .info)
+    }
+
+    private func showNotification(withMessage message: String, identifier: String, completionHandler: ((UNUserNotificationCenter) -> ())? = nil) {
+        let content = UNMutableNotificationContent()
+        content.body = message
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: { (error) in
+            if error == nil {
+                completionHandler?(center)
+            }
+        })
     }
     
     func didUpdateBeacons(_ handler: @escaping BeaconManagerUpdateHandler) {
@@ -97,13 +132,17 @@ class BeaconManager: NSObject {
 
 extension BeaconManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        if (region == self.geoRegion) {
+        if (region.identifier == "DoorRegion") {
             self.startRangingForBeaconsInBackground()
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        if (region == self.geoRegion) {
+        if (region.identifier == "DoorRegion") {
+            if inBackground {
+                self.showNotification(withMessage: "Door region exited, no door in range, background ranging stopped.", identifier: "rangingStopped")
+            }
+
             self.stopRangingForBeaconsInBackground()
         }
     }
@@ -115,16 +154,16 @@ extension BeaconManager: CLLocationManagerDelegate {
             handler()
         }
 
-        if !doorAlreadyRanged, backgroundTask != nil, beacons.count > 0 {
+        if !doorAlreadyRanged, inBackground, beacons.count > 0 {
             doorAlreadyRanged = true
 
             if let handler = self.approachingDoorHandler {
                 handler()
             }
 
-            os_log("Ranged door in background. Triggering handler.", log: OSLog.default, type: .info)
-
             self.stopRangingForBeaconsInBackground()
+
+            os_log("Ranged door in background. Triggering handler.", log: OSLog.default, type: .info)
         }
     }
 }
