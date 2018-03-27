@@ -29,13 +29,13 @@ class BeaconManager: NSObject {
     private var approachingDoorHandler: BeaconManagerApproachingDoorHandler?
     private var backgroundTask: UIBackgroundTaskIdentifier?
     private var inBackground = false
-    private var wakeUpScreenTimer: Timer?
     private var doorAlreadyRanged = false
     private var rangingEntities = 0
 
     override init() {
         let uuid = UUID(uuidString: BeaconManager.beaconUUID)
         beaconRegion = CLBeaconRegion(proximityUUID: uuid!, identifier: "DoorBeacon")
+        beaconRegion.notifyEntryStateOnDisplay = true
 
         geoRegion = CLCircularRegion(center: BeaconManager.doorLocation, radius: BeaconManager.doorLocationRadius, identifier: "DoorRegion")
 
@@ -66,18 +66,6 @@ class BeaconManager: NSObject {
 
         self.backgroundTask = UIApplication.shared.beginBackgroundTask()
 
-        self.wakeUpScreenTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { (_) in
-            if UIApplication.shared.backgroundTimeRemaining < 20 {
-                self.showNotification(withMessage: "Background task expired, no door in range.", identifier: "rangingStopped")
-                self.stopRangingForBeaconsInBackground()
-
-            } else {
-                self.showNotification(withMessage: "...", identifier: "screenWakeUp", completionHandler: { (center) in
-                    center.removeDeliveredNotifications(withIdentifiers: ["screenWakeUp"])
-                })
-            }
-        })
-
         os_log("Ranging in background started.", log: OSLog.default, type: .info)
     }
 
@@ -94,9 +82,6 @@ class BeaconManager: NSObject {
         inBackground = false
 
         self.stopRangingForBeacons()
-
-        self.wakeUpScreenTimer?.invalidate()
-        self.wakeUpScreenTimer = nil
 
         if let backgroundTask = self.backgroundTask {
             UIApplication.shared.endBackgroundTask(backgroundTask)
