@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
 
-        BeaconManager.shared.startMonitoringGeoRegion()
+        BeaconManager.shared.startMonitoring()
         BeaconManager.shared.approachingDoor {
             HomeAidManager.shared.openDoor(completion: { (error) in
                 let content = UNMutableNotificationContent()

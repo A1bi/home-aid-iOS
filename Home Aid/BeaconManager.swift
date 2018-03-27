@@ -45,12 +45,17 @@ class BeaconManager: NSObject {
         locationManager.delegate = self
     }
 
-    func startMonitoringGeoRegion() {
+    func startMonitoring() {
+        locationManager.stopMonitoring(for: self.geoRegion)
+        locationManager.startMonitoring(for: self.beaconRegion)
+    }
+
+    private func startMonitoringGeoRegion() {
         locationManager.startMonitoring(for: self.geoRegion)
     }
 
     func startRangingForBeacons() {
-        if (rangingEntities < 1) {
+        if rangingEntities < 1 {
             locationManager.startRangingBeacons(in: self.beaconRegion)
         }
         rangingEntities += 1
@@ -71,7 +76,7 @@ class BeaconManager: NSObject {
 
     func stopRangingForBeacons() {
         rangingEntities -= 1
-        if (rangingEntities < 1) {
+        if rangingEntities < 1 {
             locationManager.stopRangingBeacons(in: self.beaconRegion)
         }
     }
@@ -117,13 +122,15 @@ class BeaconManager: NSObject {
 
 extension BeaconManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        if (region.identifier == "DoorRegion") {
+        if region.identifier == "DoorRegion" {
             self.startRangingForBeaconsInBackground()
+        } else if region.identifier == "DoorBeacon", let handler = self.approachingDoorHandler {
+            handler()
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        if (region.identifier == "DoorRegion") {
+        if region.identifier == "DoorRegion" {
             if inBackground {
                 self.showNotification(withMessage: "Door region exited, no door in range, background ranging stopped.", identifier: "rangingStopped")
             }
