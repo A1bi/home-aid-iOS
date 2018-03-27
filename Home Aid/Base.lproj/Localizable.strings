@@ -11,5 +11,9 @@
 
 "beaconManager.doorInRangeNotification.title" = "Door opened";
 "beaconManager.doorInRangeNotification.body" = "The door has been opened.";
+
+"beaconManager.doorInRangeError.title" = "Door could not be opened";
+"beaconManager.doorInRangeError.body" = "The door is in range but could not be opened.";
+
 "beaconManager.doorOutOfRangeNotification.title" = "Door out of range";
 "beaconManager.doorOutOfRangeNotification.body" = "The Door is out of range.";

@@ -27,9 +27,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.setButton(button, enabled: false)
         spinner.startAnimating()
         
-        HomeAidManager.shared.openDoor { (success) in
+        HomeAidManager.shared.openDoor { (error) in
             DispatchQueue.main.sync {
-                self.checkMarkLabel.isHidden = !success
+                self.checkMarkLabel.isHidden = error == nil
                 self.spinner.stopAnimating()
             }
 

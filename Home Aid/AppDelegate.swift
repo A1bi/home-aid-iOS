@@ -19,16 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         BeaconManager.shared.startMonitoringGeoRegion()
         BeaconManager.shared.approachingDoor {
-            HomeAidManager.shared.openDoor()
+            HomeAidManager.shared.openDoor(completion: { (error) in
+                let content = UNMutableNotificationContent()
+                content.sound = .default()
 
-            let content = UNMutableNotificationContent()
-            content.title = NSLocalizedString("beaconManager.doorInRangeNotification.title", comment: "")
-            content.body = NSLocalizedString("beaconManager.doorInRangeNotification.body", comment: "")
-            content.sound = .default()
+                if (error != nil) {
+                    content.title = NSLocalizedString("beaconManager.doorInRangeError.title", comment: "")
+                    content.body = NSLocalizedString("beaconManager.doorInRangeError.body", comment: "")
 
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
-            let request = UNNotificationRequest(identifier: "doorInRange", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                } else {
+                    content.title = NSLocalizedString("beaconManager.doorInRangeNotification.title", comment: "")
+                    content.body = NSLocalizedString("beaconManager.doorInRangeNotification.body", comment: "")
+                }
+
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+                let request = UNNotificationRequest(identifier: "doorInRange", content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            })
         }
 
         return true

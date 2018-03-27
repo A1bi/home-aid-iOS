@@ -7,27 +7,37 @@
 
 import Foundation
 
-typealias HomeAidCompletionBlock = ((Bool) -> ())?
+typealias HomeAidCompletionBlock = ((HomeAidError?) -> ())?
+
+enum HomeAidError: Error {
+    case requestFailed(error: Error)
+    case unexpectedResponse(statusCode: Int)
+}
 
 class HomeAidManager {
     static let apiHost = URL(string: "https://home-aid.dyn.a0s.de")
     
     static let shared = HomeAidManager()
     
-    func openDoor(success: HomeAidCompletionBlock = nil) {
-        makeRequest(path: "/open-door", success: success)
+    func openDoor(completion: HomeAidCompletionBlock = nil) {
+        makeRequest(path: "/open-door", completion: completion)
     }
     
-    private func makeRequest(path: String, success: HomeAidCompletionBlock) {
+    private func makeRequest(path: String, completion: HomeAidCompletionBlock) {
         let url = URL(string: path, relativeTo: HomeAidManager.apiHost)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
+        request.timeoutInterval = 10
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let httpResponse = response as? HTTPURLResponse
             if error != nil {
+                completion?(HomeAidError.requestFailed(error: error!))
                 print("api error, path: \(path), error message: \(error!)")
-            } else if let httpResponse = response as? HTTPURLResponse {
-                success?(httpResponse.statusCode == 200)
+            } else if httpResponse == nil || httpResponse!.statusCode != 200 {
+                completion?(HomeAidError.unexpectedResponse(statusCode: httpResponse?.statusCode ?? -1))
+            } else {
+                completion?(nil)
             }
         }
         
