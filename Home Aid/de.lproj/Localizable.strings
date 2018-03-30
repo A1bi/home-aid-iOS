@@ -9,11 +9,8 @@
 "dashboard.doorOpened" = "Tür wurde erfolgreich geöffnet.";
 "dashboard.doorNotOpened" = "Tür konnte nicht geöffnet werden.";
 
-"beaconManager.doorInRangeNotification.title" = "Tür geöffnet";
-"beaconManager.doorInRangeNotification.body" = "Die Haustür wurde soeben durch Annäherung geöffnet.";
+"beaconManager.doorInRangeNotification.title" = "Tür wird geöffnet";
+"beaconManager.doorInRangeNotification.body" = "Die Haustür wird augenblicklich geöffnet.";
 
 "beaconManager.doorInRangeError.title" = "Tür konnte nicht geöffnet werden";
-"beaconManager.doorInRangeError.body" = "Die Tür befindet sich in Reichweite, konnte jedoch nicht geöffnet werden.";
-
-"beaconManager.doorOutOfRangeNotification.title" = "Tür außerhalb Reichweite";
-"beaconManager.doorOutOfRangeNotification.body" = "Die Haustür befindet sich nicht mehr in Reichweite.";
+"beaconManager.doorInRangeError.body" = "Beim Versuch die Tür zu öffnen trat ein Fehler auf.";

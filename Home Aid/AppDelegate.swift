@@ -19,22 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         BeaconManager.shared.startMonitoring()
         BeaconManager.shared.approachingDoor {
-            HomeAidManager.shared.openDoor(completion: { (error) in
-                let content = UNMutableNotificationContent()
-                content.sound = .default()
+            let content = UNMutableNotificationContent()
+            content.sound = .default()
+            content.title = NSLocalizedString("beaconManager.doorInRangeNotification.title", comment: "")
+            content.body = NSLocalizedString("beaconManager.doorInRangeNotification.body", comment: "")
 
+            let notificationCenter = UNUserNotificationCenter.current()
+            let request = UNNotificationRequest(identifier: "doorInRange", content: content, trigger: nil)
+            notificationCenter.add(request, withCompletionHandler: nil)
+
+            HomeAidManager.shared.openDoor(completion: { (error) in
                 if (error != nil) {
                     content.title = NSLocalizedString("beaconManager.doorInRangeError.title", comment: "")
                     content.body = NSLocalizedString("beaconManager.doorInRangeError.body", comment: "")
-
-                } else {
-                    content.title = NSLocalizedString("beaconManager.doorInRangeNotification.title", comment: "")
-                    content.body = NSLocalizedString("beaconManager.doorInRangeNotification.body", comment: "")
+                    let request = UNNotificationRequest(identifier: "doorInRangeError", content: content, trigger: nil)
+                    notificationCenter.add(request, withCompletionHandler: nil)
                 }
-
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
-                let request = UNNotificationRequest(identifier: "doorInRange", content: content, trigger: trigger)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             })
         }
 
