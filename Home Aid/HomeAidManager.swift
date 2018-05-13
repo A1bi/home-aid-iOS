@@ -16,7 +16,15 @@ enum HomeAidError: Error {
 
 class HomeAidManager {
     static let apiHost = URL(string: "https://home-aid.dyn.a0s.de")
-    
+    static var authToken:String? {
+        set(newValue) {
+            UserDefaults.standard.setValue(newValue, forKey: "ApiAuthToken")
+        }
+        get {
+            return UserDefaults.standard.string(forKey: "ApiAuthToken")!
+        }
+    }
+
     static let shared = HomeAidManager()
     
     func openDoor(completion: HomeAidCompletionBlock = nil) {
@@ -28,6 +36,9 @@ class HomeAidManager {
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.timeoutInterval = 10
+        if let authToken = HomeAidManager.authToken {
+            request.setValue(authToken, forHTTPHeaderField: "X-Auth")
+        }
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             let httpResponse = response as? HTTPURLResponse

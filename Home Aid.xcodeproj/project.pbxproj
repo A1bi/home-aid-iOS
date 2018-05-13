@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F08089CC2040781000B12932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CB2040781000B12932 /* AppDelegate.swift */; };
 		F08089CE2040781000B12932 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CD2040781000B12932 /* DashboardViewController.swift */; };
-		F08089D02040781000B12932 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CF2040781000B12932 /* SettingsViewController.swift */; };
+		F08089D02040781000B12932 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CF2040781000B12932 /* SettingsTableViewController.swift */; };
 		F08089D32040781000B12932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089D12040781000B12932 /* Main.storyboard */; };
 		F08089D52040781000B12932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08089D42040781000B12932 /* Assets.xcassets */; };
 		F08089D82040781000B12932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08089D62040781000B12932 /* LaunchScreen.storyboard */; };
@@ -53,7 +53,7 @@
 		F08089C82040781000B12932 /* Home Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08089CB2040781000B12932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F08089CD2040781000B12932 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		F08089CF2040781000B12932 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F08089CF2040781000B12932 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F08089D22040781000B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F08089D42040781000B12932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F08089D72040781000B12932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				F08089CB2040781000B12932 /* AppDelegate.swift */,
 				F08089CD2040781000B12932 /* DashboardViewController.swift */,
-				F08089CF2040781000B12932 /* SettingsViewController.swift */,
+				F08089CF2040781000B12932 /* SettingsTableViewController.swift */,
 				F08F78382041C62000F98577 /* BeaconsTableViewController.swift */,
 				F08089DF20407B1200B12932 /* HomeAidManager.swift */,
 				F08F783C2041EC0700F98577 /* BeaconManager.swift */,
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F08089D02040781000B12932 /* SettingsViewController.swift in Sources */,
+				F08089D02040781000B12932 /* SettingsTableViewController.swift in Sources */,
 				F08089E020407B1200B12932 /* HomeAidManager.swift in Sources */,
 				F08089CC2040781000B12932 /* AppDelegate.swift in Sources */,
 				F08F78392041C62000F98577 /* BeaconsTableViewController.swift in Sources */,
