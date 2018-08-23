@@ -21,7 +21,7 @@ class HomeAidManager {
             UserDefaults.standard.setValue(newValue, forKey: "ApiAuthToken")
         }
         get {
-            return UserDefaults.standard.string(forKey: "ApiAuthToken")!
+            return UserDefaults.standard.string(forKey: "ApiAuthToken")
         }
     }
 
