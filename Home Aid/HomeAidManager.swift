@@ -30,14 +30,26 @@ class HomeAidManager {
     func openDoor(completion: HomeAidCompletionBlock = nil) {
         makeRequest(path: "/open-door", completion: completion)
     }
+
+    func registerPushDeviceToken(token: String, completion: HomeAidCompletionBlock = nil) {
+        makeRequest(path: "/push-device-tokens", data: ["token": token], completion: completion)
+    }
     
-    private func makeRequest(path: String, completion: HomeAidCompletionBlock) {
+    private func makeRequest(path: String, data: Dictionary<String, String>? = nil, completion: HomeAidCompletionBlock) {
         let url = URL(string: path, relativeTo: HomeAidManager.apiHost)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.timeoutInterval = 10
         if let authToken = HomeAidManager.authToken {
             request.setValue(authToken, forHTTPHeaderField: "X-Auth")
+        }
+
+        if let d = data {
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            if let json = try? JSONSerialization.data(withJSONObject: d, options: []) {
+                request.httpBody = json
+            }
         }
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

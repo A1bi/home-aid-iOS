@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
+        center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in })
+        application.registerForRemoteNotifications()
 
         BeaconManager.shared.startMonitoring()
         BeaconManager.shared.approachingDoor {
@@ -39,6 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         return true
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        HomeAidManager.shared.registerPushDeviceToken(token: token)
+    }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("\(error.localizedDescription)")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
