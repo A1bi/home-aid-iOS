@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F05F41B7213231A900139EB6 /* door_bell.aif in Resources */ = {isa = PBXBuildFile; fileRef = F05F41B62132319800139EB6 /* door_bell.aif */; };
 		F08089CC2040781000B12932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CB2040781000B12932 /* AppDelegate.swift */; };
 		F08089CE2040781000B12932 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CD2040781000B12932 /* DashboardViewController.swift */; };
 		F08089D02040781000B12932 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08089CF2040781000B12932 /* SettingsTableViewController.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		F05F41B32131F29F00139EB6 /* Home Aid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home Aid.entitlements"; sourceTree = "<group>"; };
+		F05F41B62132319800139EB6 /* door_bell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = door_bell.aif; sourceTree = "<group>"; };
 		F08089C82040781000B12932 /* Home Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08089CB2040781000B12932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F08089CD2040781000B12932 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				F08F78422046299500F98577 /* DoorWay.gpx */,
 				F0808A072041B8F100B12932 /* InfoPlist.strings */,
 				F0808A0A2041B96300B12932 /* Localizable.strings */,
+				F05F41B62132319800139EB6 /* door_bell.aif */,
 			);
 			path = "Home Aid";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				F08089D52040781000B12932 /* Assets.xcassets in Resources */,
 				F08089D32040781000B12932 /* Main.storyboard in Resources */,
 				F0808A092041B8F100B12932 /* InfoPlist.strings in Resources */,
+				F05F41B7213231A900139EB6 /* door_bell.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

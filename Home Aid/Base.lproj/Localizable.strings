@@ -6,6 +6,10 @@
   
 */
 
+"notifications.bellRang.title" = "Ring ring!";
+"notifications.bellRang.body" = "Someone rang the door bell.";
+"notifications.openDoor" = "Open door";
+
 "dashboard.doorOpened" = "Door successfully opened.";
 "dashboard.doorNotOpened" = "Door could not be opened.";
 

@@ -9,13 +9,20 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let center = UNUserNotificationCenter.current()
+        center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in })
+
+        let action = UNNotificationAction(identifier: "openDoor", title: NSLocalizedString("notifications.openDoor", comment: ""))
+        center.setNotificationCategories([
+            UNNotificationCategory(identifier: "bellRang", actions: [action], intentIdentifiers: [])
+        ])
+
         application.registerForRemoteNotifications()
 
         BeaconManager.shared.startMonitoring()
@@ -49,6 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("\(error.localizedDescription)")
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if (response.actionIdentifier == "openDoor") {
+            HomeAidManager.shared.openDoor { (error) in
+                completionHandler()
+            }
+        } else {
+            completionHandler()
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

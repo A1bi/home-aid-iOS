@@ -6,6 +6,10 @@
   
 */
 
+"notifications.bellRang.title" = "Klingeling!";
+"notifications.bellRang.body" = "Jemand hat an der Tür geklingelt.";
+"notifications.openDoor" = "Tür öffnen";
+
 "dashboard.doorOpened" = "Tür wurde erfolgreich geöffnet.";
 "dashboard.doorNotOpened" = "Tür konnte nicht geöffnet werden.";
 
