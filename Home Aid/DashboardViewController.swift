@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Intents
 
 class DashboardViewController: UIViewController {
 
@@ -15,6 +16,20 @@ class DashboardViewController: UIViewController {
 
     @IBAction func openDoor(_ sender: Any) {
         startAction(button: sender)
+
+        let intent = OpenDoorIntent()
+        intent.delay = 0
+
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("Interaction donation failed: %@", error)
+                }
+            } else {
+                print("Successfully donated interaction")
+            }
+        }
         
         HomeAidManager.shared.openDoor { (error) in
             let success = error == nil
