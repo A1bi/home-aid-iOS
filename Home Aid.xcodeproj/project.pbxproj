@@ -98,6 +98,7 @@
 		F08F783E2043008900F98577 /* DoorLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorLocation.gpx; sourceTree = "<group>"; };
 		F08F78422046299500F98577 /* DoorWay.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorWay.gpx; sourceTree = "<group>"; };
 		F0CE371222B1695F00FC3A59 /* Home Aid Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home Aid Widget.entitlements"; sourceTree = "<group>"; };
+		F0D64AB022B18FF20078B05F /* Home Aid Intents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home Aid Intents.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +130,7 @@
 		F01ADADB214BDF74003EEDFE /* Home Aid Intents */ = {
 			isa = PBXGroup;
 			children = (
+				F0D64AB022B18FF20078B05F /* Home Aid Intents.entitlements */,
 				F01ADADC214BDF74003EEDFE /* IntentHandler.swift */,
 				F01ADAE5214BE2CA003EEDFE /* OpenDoorIntentHandler.swift */,
 				F01ADAF0214BF4B4003EEDFE /* Intents.intentdefinition */,
@@ -270,6 +272,11 @@
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F08089C72040781000B12932 = {
 						CreatedOnToolsVersion = 9.2;
@@ -459,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Home Aid Intents/Home Aid Intents.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48L6BF6M3;
 				INFOPLIST_FILE = "Home Aid Intents/Info.plist";
@@ -479,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Home Aid Intents/Home Aid Intents.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48L6BF6M3;
