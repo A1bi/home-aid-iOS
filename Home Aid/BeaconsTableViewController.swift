@@ -32,14 +32,16 @@ class BeaconsTableViewController: UITableViewController {
     
     private func nameForProximity(_ proximity: CLProximity) -> String {
         switch proximity {
-        case .unknown:
-            return "Unknown"
         case .immediate:
             return "Immediate"
         case .near:
             return "Near"
         case .far:
             return "Far"
+        case .unknown:
+            return "Unknown"
+        @unknown default:
+            return "Unknown"
         }
     }
 
@@ -56,7 +58,7 @@ class BeaconsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "beaconCell")
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "beaconCell")
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "beaconCell")
         }
         
         let beacon = BeaconManager.shared.beacons[indexPath.row]

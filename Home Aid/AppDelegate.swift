@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in })
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         BeaconManager.shared.startMonitoring()
         BeaconManager.shared.approachingDoor {
             let content = UNMutableNotificationContent()
-            content.sound = .default()
+            content.sound = .default
             content.title = NSLocalizedString("beaconManager.doorInRangeNotification.title", comment: "")
             content.body = NSLocalizedString("beaconManager.doorInRangeNotification.body", comment: "")
 
