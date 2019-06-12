@@ -97,6 +97,7 @@
 		F08F783C2041EC0700F98577 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		F08F783E2043008900F98577 /* DoorLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorLocation.gpx; sourceTree = "<group>"; };
 		F08F78422046299500F98577 /* DoorWay.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DoorWay.gpx; sourceTree = "<group>"; };
+		F0CE371222B1695F00FC3A59 /* Home Aid Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Home Aid Widget.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +192,7 @@
 		F08089E920418AD300B12932 /* Home Aid Widget */ = {
 			isa = PBXGroup;
 			children = (
+				F0CE371222B1695F00FC3A59 /* Home Aid Widget.entitlements */,
 				F08089EA20418AD300B12932 /* TodayViewController.swift */,
 				F08089EC20418AD300B12932 /* Main.storyboard */,
 				F08089EF20418AD300B12932 /* Info.plist */,
@@ -283,6 +285,11 @@
 					F08089E420418AD300B12932 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -456,9 +463,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.IntentHandler";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "iOS Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Home Aid Intents Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,9 +483,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.IntentHandler";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "iOS Adhoc";
+				PROVISIONING_PROFILE_SPECIFIER = "Home Aid Intents Adhoc";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -642,14 +649,15 @@
 		F08089F420418AD300B12932 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Home Aid Widget/Home Aid Widget.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48L6BF6M3;
 				INFOPLIST_FILE = "Home Aid Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.Home-Aid-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "10865a51-d5a5-4703-84e2-8d0433828c87";
-				PROVISIONING_PROFILE_SPECIFIER = "iOS Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Home Aid Widget Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -659,15 +667,16 @@
 		F08089F520418AD300B12932 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Home Aid Widget/Home Aid Widget.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V48L6BF6M3;
 				INFOPLIST_FILE = "Home Aid Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.Home-Aid-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.a0s.home-aid.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e685467c-8528-4669-92e6-8e6eb290faa6";
-				PROVISIONING_PROFILE_SPECIFIER = "iOS Adhoc";
+				PROVISIONING_PROFILE_SPECIFIER = "Home Aid Widget Adhoc";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

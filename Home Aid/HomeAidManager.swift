@@ -16,12 +16,13 @@ enum HomeAidError: Error {
 
 class HomeAidManager {
     static let apiHost = URL(string: "https://home-aid.dyn.a0s.de")
+    static let defaults = UserDefaults(suiteName: "group.de.a0s.home-aid")
     static var authToken:String? {
         set(newValue) {
-            UserDefaults.standard.setValue(newValue, forKey: "ApiAuthToken")
+            defaults?.setValue(newValue, forKey: "ApiAuthToken")
         }
         get {
-            return UserDefaults.standard.string(forKey: "ApiAuthToken")
+            return defaults?.string(forKey: "ApiAuthToken")
         }
     }
 
